@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 8 Months Anniversary</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f6;
+      text-align: center;
+      color: #333;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .heart {
+      color: red;
+      font-size: 50px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .envelope, .ring-box {
+      width: 100px;
+      height: 60px;
+      background: #fff;
+      border: 2px solid #ff0000;
+      position: relative;
+      margin: 20px auto;
+      cursor: pointer;
+    }
+
+    .envelope:before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: #ff0000;
+      border-radius: 10px;
+    }
+
+    .letter {
+      display: none;
+      background: rgba(0,0,0,0.7);
+      width: 90%;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      color: white;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .ring {
+      display: none;
+      font-size: 30px;
+      color: gold;
+      margin-top: 20px;
+    }
+
+    .bike-image {
+      width: 300px;
+      margin: 20px auto;
+    }
+
+    .final-message {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 30px;
+      color: #cc0066;
+    }
+
+    .transition-bike {
+      width: 100%;
+      max-width: 500px;
+      margin: 40px auto;
+      animation: moveBike 4s ease-in-out forwards;
+    }
+
+    @keyframes moveBike {
+      0% { transform: translateX(-100%); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Intro Yamaha Bike Animation -->
+  <img src="https://i.imgur.com/sJq6tRt.png" alt="Yamaha FZ with couple" class="transition-bike" />
+
+  <h1>Happy 8 Months Anniversary, My Love! <span class="heart">❤️</span></h1>
+
+  <h2>Let's Go for a Date?</h2>
+  <button onclick="showOptions()">Click Here</button>
+
+  <div id="options" class="hidden">
+    <button onclick="yesOption()">Yes</button>
+    <button disabled>No</button>
+  </div>
+
+  <div id="loveLetter" class="hidden">
+    <div class="envelope" onclick="openEnvelope()"></div>
+    <div class="letter">
+      <h3>My Dearest Jeswin (Bujji),</h3>
+      <p>From our first smile to every silly fight, from random rides to deep conversations—every moment with you is a memory I cherish. These 8 months have been magical, and I can’t imagine life without your love and laughter.</p>
+      <p>You are my peace, my chaos, my forever person. I don't just want a happy ending—I want a beautiful journey, with you by my side, through every turn life takes.</p>
+      <p>Yours truly and forever,<br/>Jessica (Bujju)</p>
+    </div>
+  </div>
+
+  <div id="proposal" class="hidden">
+    <div class="ring-box" onclick="openRingBox()"></div>
+    <div class="ring">💍 Will you marry me?</div>
+  </div>
+
+  <div id="finalScene" class="hidden">
+    <img src="https://i.imgur.com/z0NJrLv.png" alt="Bride and Groom on Royal Enfield Hunter" class="bike-image" />
+    <div class="final-message">Forever riding together through ups and downs ❤️</div>
+  </div>
+
+  <script>
+    function showOptions() {
+      document.getElementById('options').classList.remove('hidden');
+    }
+
+    function yesOption() {
+      document.getElementById('loveLetter').classList.remove('hidden');
+      document.getElementById('options').classList.add('hidden');
+    }
+
+    function openEnvelope() {
+      document.querySelector('.letter').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('proposal').classList.remove('hidden');
+      }, 1000);
+    }
+
+    function openRingBox() {
+      document.querySelector('.ring').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('finalScene').classList.remove('hidden');
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
